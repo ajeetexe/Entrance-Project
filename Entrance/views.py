@@ -9,3 +9,7 @@ class Index(TemplateView):
 
 class Contact(TemplateView):
     template_name = 'contact.html'
+
+
+class center(TemplateView):
+    template_name = 'center.html'

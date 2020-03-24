@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <title>Mahatma Gandhi University</title>
+    <link rel="stylesheet" href="{% static 'Entrance/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Entrance/css/index.css' %}">
+    <title>SCCET</title>
 </head>
 <body>
     <nav class="container">
         <div id="brand">
-            <h1>Mahatma Gandhi university</h1>
+            <h1>State College Common Entrance Test</h1>
         </div>
         <div id="links">
-            <a href="">Home</a>
-            <a href="">Examination Center</a>
-            <a href="">Contact Us</a>
+            <a href="{% url 'Home'%}">Home</a>
+            <a href="{% url 'Exam_Centre'%}">Centre</a>
+            <a href="{% url 'contact'%}">About</a>
         </div>
     </nav>
     <div class="container">
