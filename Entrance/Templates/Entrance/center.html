@@ -1,1 +1,103 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <div class="centre">
+            <table style="width: 100%">
+                <tr>
+                    <th class="centre_2">In-Charge</th>
+                    <th class="centre_2">Centre</th>
+                    <th class="centre_2">Address</th>
+                    <th class="centre_2">Number of seat</th>
+                </tr>
+                <tr>
+                    <td class="centre_1">Rakesh Sharma</td>
+                    <td class="centre_1">M. G. College</td>
+                    <td class="centre_1">Patna</td>
+                    <td class="centre_1">42</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Birendra Gupta</td>
+                    <td class="centre_1">B. N. College</td>
+                    <td class="centre_1">Gaya</td>
+                    <td class="centre_1">39</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Tahir Hussain</td>
+                    <td class="centre_1">Nawab College</td>
+                    <td class="centre_1">Muzaffarpur</td>
+                    <td class="centre_1">47</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Parveen Akhtar</td>
+                    <td class="centre_1">G. M. College</td>
+                    <td class="centre_1">Nawada</td>
+                    <td class="centre_1">41</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Uday Panday</td>
+                    <td class="centre_1">Hindu College</td>
+                    <td class="centre_1">Patna</td>
+                    <td class="centre_1">42</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Micheal DaSilva</td>
+                    <td class="centre_1">Lalan Singh College</td>
+                    <td class="centre_1">Patna</td>
+                    <td class="centre_1">32</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Chandra Shekhar Pandey</td>
+                    <td class="centre_1">M. G. college</td>
+                    <td class="centre_1">Gaya</td>
+                    <td class="centre_1">26</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Poonam Hegde</td>
+                    <td class="centre_1">Abdul kalam College</td>
+                    <td class="centre_1">Purnia</td>
+                    <td class="centre_1">37</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Rakesh Singh</td>
+                    <td class="centre_1">Lohia College</td>
+                    <td class="centre_1">BhagalPur</td>
+                    <td class="centre_1">43</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Bhupinder Kohali</td>
+                    <td class="centre_1">Anugrah College</td>
+                    <td class="centre_1">Dharbhnaga</td>
+                    <td class="centre_1">24</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Shiv Sharma</td>
+                    <td class="centre_1">Manas College</td>
+                    <td class="centre_1">Patna</td>
+                    <td class="centre_1">56</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Kamlesh Patel</td>
+                    <td class="centre_1">L. S. College</td>
+                    <td class="centre_1">Samstipur</td>
+                    <td class="centre_1">34</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">BajiRao Shingham</td>
+                    <td class="centre_1">M. G. College</td>
+                    <td class="centre_1">Jehanabad</td>
+                    <td class="centre_1">42</td>
+                </tr>
+                <tr>
+                    <td class="centre_1">Uma Aggarwal</td>
+                    <td class="centre_1">S. N. College</td>
+                    <td class="centre_1">Patna</td>
+                    <td class="centre_1">45</td>
+                </tr>
+            </table>
+    </div>
+    <div class="info">
+        <p>For More information about College <a href="{% static 'Entrance/image/pic.jpg'%}" download="pic.jpg">Click Here</a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,12 +1,31 @@
-#home{
-    display: flex;
-    margin-top: 10px;
+
+.image{
+    margin-top: 2%;
+    display: grid;
+    height: 100%;
+    
+} 
+.fit{
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+    height: 480px;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 20px;
 }
 .notification{
-    flex: 1;
+    margin-top: 2%;
 }
-.registraion{
-    flex: 3;
-    height: 640px;
-    width: 480px;
+.button{
+    background-color: green;
+    color: white;
+    padding: 5px 75px;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 20px;
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
 }

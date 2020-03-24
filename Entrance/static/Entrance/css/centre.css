@@ -1,0 +1,19 @@
+.centre{
+    margin-top: 2%;
+}
+.centre_1{
+    background-color:white;
+    color:black;
+    padding: 1% 2%;
+    border: black 1px solid;
+    border-radius: 10px;
+    font-size: 15px;
+    
+}
+.centre_2{
+    background-color:indigo;
+    color:white;
+    padding: 1% 2%;
+    border-radius: 10px;
+    font-size: 18px;
+}

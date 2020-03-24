@@ -2,14 +2,13 @@
 {% load static %}
 {% block content %}
 <div id="home">
-    <div class="notification">
-        <a href="{% url 'register' %}">Register</a> 
-        <input class="login" type="button" value="Login"><br>
-        <a href="#">Admission Notification</a>
-        
-    </div>
     <div class="image">
-        <img src="{% static 'Entrance/image/pic.jpg' %}" alt="University">
+        <img class="fit" src="{% static 'Entrance/image/pic.jpg' %}" alt="University">
+    </div>
+    <div class="notification">
+        <a class="button" href="{% url 'register' %}">Register</a> 
+        <a class="button" href="">Login</a>
+         
     </div>
 </div>
 {% endblock %}
