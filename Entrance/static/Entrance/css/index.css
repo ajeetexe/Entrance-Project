@@ -1,0 +1,12 @@
+#home{
+    display: flex;
+    margin-top: 10px;
+}
+.notification{
+    flex: 1;
+}
+.registraion{
+    flex: 3;
+    height: 640px;
+    width: 480px;
+}
