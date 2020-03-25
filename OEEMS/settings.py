@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 Template1_Dir = os.path.join(BASE_DIR,"Entrance/Templates/Entrance")
-Template2_Dir = os.path.join(BASE_DIR,'FormFillUp/Templates/FormFillUp')
+Template2_Dir = os.path.join(BASE_DIR,'Entrance/Templates/FormFillUp')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Entrance',
-    'FormFillUp',
+    'phone_field',
 ]
 
 MIDDLEWARE = [

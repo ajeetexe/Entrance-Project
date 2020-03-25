@@ -3,11 +3,11 @@
 {% block content %}
 <div id="home">
     <div class="image">
-        <img class="fit" src="{% static 'Entrance/image/pic.jpg' %}" alt="University">
+        <img class="img-thumbnail" src="{% static 'Entrance/image/pic.jpg' %}" alt="University">
     </div>
     <div class="notification">
-        <a class="button" href="{% url 'register' %}">Register</a> 
-        <a class="button" href="">Login</a>
+        <a class="btn btn-success" href="{% url 'register' %}">Register</a> 
+        <a class="btn btn-success" href="">Login</a>
          
     </div>
 </div>
