@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="form_d">
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Next">
+    </form>
+</div>
+{% endblock %}

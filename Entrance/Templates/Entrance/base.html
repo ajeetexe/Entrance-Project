@@ -11,9 +11,29 @@
 
     <title>SCCET</title>
 </head>
-<body class="container">
+<body class="container bg-info">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand text-primary" href="{% url 'Home'%}">State College Common Entrance Test</a>
+      {% if user.is_authenticated %} 
+      <a class="navbar-brand text-primary" href="{% url 'user_profile'%}">State College Common Entrance Test</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          {% if user.is_superuser %}
+          
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'userinfo'%}">Form Fill Up</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+          </li>
+        </ul>
+      </div>
+      {% else %}
+      <a class="navbar-brand text-primary" href="{% url 'Home'%}">State College Common Entrance Test</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,6 +50,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'contact'%}">About</a>
             </li>
+          {% endif %}
           </ul>
         </div>
       </nav>
@@ -41,8 +62,9 @@
     <script src="{% static 'Entrance/js/popper.min.js' %}"></script>
     <script src="{% static 'Entrance/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'Entrance/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'Entrance/js/custom.js' %}"></script>
 </body>
 <footer>
-    <div class="footer1"><p>State College Common Entrance test &copy; 2020</p></div>
+    <div class="footer-copyright text-center my-3 text-white bg-dark"><p>State College Common Entrance test &copy; 2020</p></div>
 </footer>
 </html>

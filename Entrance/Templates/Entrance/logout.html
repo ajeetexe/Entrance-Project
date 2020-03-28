@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="alert alert-success mt-3" role="alert">
+    You Successfully Logout 
+</div>
+<div class="text-primary mt-4">
+    Do You want to <a class="text-danger" href="{% url 'login' %}">Login</a> again
+</div>
+{% endblock %}

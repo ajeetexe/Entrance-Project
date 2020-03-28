@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% block content %}
 <div class="form_d">
-    <form method="post">
+    <form method="post" autocomplete="on">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" class="btn btn-primary" value="Submit">
