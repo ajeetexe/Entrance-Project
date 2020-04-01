@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from . import forms
 from . import models
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import request
-
+from django.contrib.auth.decorators import login_required
 
 class Index(TemplateView):
     template_name = 'index.html'
@@ -23,29 +23,15 @@ class register(CreateView):
     form_class = forms.RegisterForm
     model = User
 
-class LoginPage(LoginRequiredMixin,TemplateView):
+class FormFillView(LoginRequiredMixin,CreateView):
     login_url = '/login/'
-    template_name = 'login_page.html'
+    form_class = forms.FormFillForms
+    model = models.FormFillModel
 
 
-class UserInfo(LoginRequiredMixin,CreateView):
-    login_url ='/login/'
-    form_class = forms.UserInfoForm
-    model = models.UserInfoModel
-
-class Qualification(LoginRequiredMixin,CreateView):
-    login_url ='/login/'
-    form_class = forms.QualifyForm
-    model = models.QualificationModel
-
-class DocumentUpload(LoginRequiredMixin,CreateView):
-    login_url ='/login/'
-    form_class = forms.DocumentUploadForm
-    model = models.DocumentUploadModel
-
-class Preference(LoginRequiredMixin,CreateView):
-    login_url ='/login/'
-    form_class = forms.PreferenceForm
-    model = models.PreferenceModel
-
-print(User.objects.filter())
+@login_required
+def loginPage(request):
+    if request.user.is_superuser:
+        return redirect('/admin/')
+    else:
+        return render(request,'login_page.html')

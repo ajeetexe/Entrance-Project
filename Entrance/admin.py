@@ -1,9 +1,13 @@
 from django.contrib import admin
-from .models import UserInfoModel, QualificationModel, DocumentUploadModel, PreferenceModel
+from .models import *
+from Entrance.forms import FormFillForms
 
 # Register your models here.
+class FormFillAdmin(admin.ModelAdmin):
+    form = FormFillForms
 
-admin.site.register(QualificationModel)
-admin.site.register(UserInfoModel)
-admin.site.register(DocumentUploadModel)
-admin.site.register(PreferenceModel)
+    def save_model(self, request, obj, form, change):
+        obj.user_name = request.username
+        obj.save()
+
+admin.site.register(FormFillModel,FormFillAdmin)

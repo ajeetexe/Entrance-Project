@@ -20,11 +20,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          {% if user.is_superuser %}
-          
-          {% else %}
+        {% if request.path != '/formfill/' %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'userinfo'%}">Form Fill Up</a>
+            <a class="nav-link" href="{% url 'form_fill'%}">Form Fill Up</a>
           </li>
           {% endif %}
           <li class="nav-item">
