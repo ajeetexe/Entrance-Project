@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+    {% if request.user.formfill.user_name != user %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {# userinfo  #}
+            <table class="table  table-responsive mt-3">
+                <tr>
+                    <th scope="row">First Name</th>
+                    <td>{{ form.first_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Last Name</th>
+                    <td>{{ form.last_name }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Email</th>
+                    <td>{{ form.email }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date Of Birth</th>
+                    <td>{{ form.dob }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Gender</th>
+                    <td>{{ form.gender }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Address</th>
+                    <td>{{ form.address }}</td>
+                </tr>
+            </table>
+            {#qualification#}
+            <table class="table table-responsive mt-3">
+                <thead class="thead-light">
+                <tr>
+                    <th>Degree</th>
+                    <th>Percent</th>
+                    <th>Board</th>
+                    <th>Passing Year</th>
+                    <th>College/University</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Matriculation/10th</th>
+                    <td>{{ form.percent1 }}</td>
+                    <td>{{ form.board1 }}</td>
+                    <td>{{ form.passing_year1 }}</td>
+                    <td>{{ form.college1 }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Intermediate/12th</th>
+                    <td>{{ form.percent2 }}</td>
+                    <td>{{ form.board2 }}</td>
+                    <td>{{ form.passing_year2 }}</td>
+                    <td>{{ form.college2 }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Graduation</th>
+                    <td>{{ form.percent3 }}</td>
+                    <td>{{ form.board3 }}</td>
+                    <td>{{ form.passing_year3 }}</td>
+                    <td>{{ form.college3 }}</td>
+                </tr>
+                </tbody>
+            </table>
+            {# upload document #}
+
+            <table class="table table-responsive mt-3 ">
+                <tr>
+                    <th scope="row">Profile Picture</th>
+                    <td>{{ form.profile_pic }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Matriculation/ 10th Marksheet</th>
+                    <td>{{ form.doc_1 }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Intermediate/ 12th Marksheet</th>
+                    <td>{{ form.doc_2 }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Graduation Marksheet</th>
+                    <td>{{ form.doc_3 }}</td>
+                </tr>
+            </table>
+            {# preference #}
+            <table class="table table-responsive mt-3">
+                <thead class="thead-light">
+                <tr>
+                    <th>Preference</th>
+                    <th>Course</th>
+                    <th>College</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1.</th>
+                    <td>{{ form.select_course1 }}</td>
+                    <td>{{ form.select_college1 }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">2.</th>
+                    <td>{{ form.select_course2 }}</td>
+                    <td>{{ form.select_college2 }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">3.</th>
+                    <td>{{ form.select_course3 }}</td>
+                    <td>{{ form.select_college3 }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    {% else %}
+        <div class="jumbotron">
+            <h1 class="text-danger">You had Already Filled the Form</h1>
+        </div>
+    {% endif %}
+{% endblock %}

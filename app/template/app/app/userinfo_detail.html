@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div>
+        {% if request.user.formfill.user_name == user %}
+            {% for foo in formfill %}
+                {% if foo.user_name == user %}
+                    <div class="d-flex bd-highlight">
+                        <div class="p-2 flex-fill bd-highlight">
+                            {# userinfo #}
+                            <table style="width: 100%">
+                                <tr>
+                                    <th>Username:</th>
+                                    <td>{{ foo.user_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Full Name:</th>
+                                    <td>{{ foo.first_name }} {{ foo.last_name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email:</th>
+                                    <td>{{ foo.email }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Date of Birth:</th>
+                                    <td>{{ foo.dob }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gender:</th>
+                                    <td>{{ foo.get_gender_display }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Address:</th>
+                                    <td>{{ foo.address }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class=" media p-2 flex-fill bd-highlight">
+                            {# profilepic #}
+                            <img src="{{ foo.profile_pic.url }}" alt="profile pic" width="120" height="160">
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        {# qualification #}
+                        <table style="width: 100%">
+                            <tr>
+                                <th>Degree</th>
+                                <th>Percent</th>
+                                <th>Board</th>
+                                <th>Passing Year</th>
+                                <th>College</th>
+                            </tr>
+                            <tr>
+                                <th>Matriculation</th>
+                                <td>{{ foo.percent1 }}</td>
+                                <td>{{ foo.board1 }}</td>
+                                <td>{{ foo.passing_year1 }}</td>
+                                <td>{{ foo.college1 }}</td>
+                            </tr>
+                            <tr>
+                                <th>Intermediate</th>
+                                <td>{{ foo.percent2 }}</td>
+                                <td>{{ foo.board2 }}</td>
+                                <td>{{ foo.passing_year2 }}</td>
+                                <td>{{ foo.college2 }}</td>
+                            </tr>
+                            {% if foo.passing_year3 != '' %}
+                                <tr>
+                                    <th>Graduation</th>
+                                    <td>{{ foo.percent3 }}</td>
+                                    <td>{{ foo.board3 }}</td>
+                                    <td>{{ foo.passing_year3 }}</td>
+                                    <td>{{ foo.college3 }}</td>
+                                </tr>
+                            {% endif %}
+
+                        </table>
+                    </div>
+                    <div>
+                        <hr>
+                        {# preference #}
+                        <table style="width: 100%">
+                            <tr>
+                                <th>Preference</th>
+                                <th>Course</th>
+                                <th>College</th>
+                            </tr>
+                            <tr>
+                                <th>1.</th>
+                                <td>{{ foo.get_select_course1_display }}</td>
+                                <td>{{ foo.get_select_college1_display }}</td>
+                            </tr>
+                            <tr>
+                                <th>2.</th>
+                                <td>{{ foo.get_select_course2_display }}</td>
+                                <td>{{ foo.get_select_college2_display }}</td>
+                            </tr>
+                            <tr>
+                                <th>3.</th>
+                                <td>{{ foo.get_select_course3_display }}</td>
+                                <td>{{ foo.get_select_college3_display }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <div class="jumbotron">
+                <h1 class="text-danger">Data Not Available</h1>
+                <h3 class="text-success">You have to filled form first</h3>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
